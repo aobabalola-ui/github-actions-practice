@@ -1,0 +1,23 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:      # manual run button
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4      # an action
+      - name: Say hello
+        run: echo "Hello, DevOps!"     # a shell script
+      - name: Show files
+        run: ls -la
+
+  build:
+    needs: test                        # runs after "test"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Building..."
