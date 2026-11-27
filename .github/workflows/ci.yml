@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4      # an action
       - name: Say hello
-        run:  exit 1     # a shell script
+        run: echo "Hello, DevOps!"      # a shell script
       - name: Show files
         run: ls -la
 
